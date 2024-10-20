@@ -12,6 +12,7 @@ import { logger } from "./logger.js";
 import { proute } from "./router/product.route.js/add_Product.route.js";
 import { invest_route } from "./router/product.route.js/invest.route.js";
 import './controller/cronjob.js';
+import { generalProduct } from "./router/product.route.js/general_product.js";
 
 dotenv.config(); // Load environment variables
 
@@ -55,6 +56,8 @@ app.get("/", (req, res) => {
 app.use('/api/v1', router);  // User routes
 app.use('/api/v1', proute)
 app.use('/api/v1',invest_route);  // Product-related routes
+app.use('/api/v1',generalProduct)
+
 
 // Database Connection
 try {
